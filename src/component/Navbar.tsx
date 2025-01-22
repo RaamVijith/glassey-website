@@ -1,6 +1,6 @@
-import { ChevronDown, ShoppingBag } from "lucide-react";
+import { ChevronDown, Search, ShoppingBag } from "lucide-react";
 import React, { useState } from "react";
-import { CiUser } from "react-icons/ci";
+import { FiUser } from "react-icons/fi";
 
 
 interface MenuItem {
@@ -66,16 +66,16 @@ const Navbar: React.FC = () => {
     <header className="text-gray-800 border-t-[1px]">
       <div className="flex-col mx-auto  flex items-center justify-center">
         {/* Main Navbar */}
-        <div className="flex px-5 text-[17px]  py-6 items-center justify-center  md:mt-0">
+        <div className="flex px-5 text-[17px]  py-5 items-center justify-center  md:mt-0">
        
           <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("SHOP")}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="px-3 py-3 flex items-center gap-4 space-x-1 bg-gray-100">
-              <div className="flex flex-row gap-1 items-center font-semibold text-gray-500">
-                <span>Shop Categories</span>
+            <button className="px-3 py-[14px]  flex items-center gap-4 space-x-1 bg-gray-100">
+              <div className="flex flex-row pl-3 gap-1 items-center font-semibold text-gray-500">
+                <span>All Categories</span>
               </div>
 
               <ChevronDown size={16} />
@@ -118,12 +118,13 @@ const Navbar: React.FC = () => {
             <input
               type="text"
               placeholder="Search"
-              className="bg-gray-100 px-10 py-3 w-[25vw] border-l-[1px] border-gray-200 text-gray-900"
+              className="bg-gray-100 px-10 py-[14px] w-[25vw] border-l-[1px] border-gray-200 text-gray-900"
             />
+            <Search className="absolute right-2 top-3 font-extralight " size={28}/>
           </div>
           <div className="flex gap-2 items-center">
-            <div className="flex flex-row gap-2 pl-4 items-center">
-              <CiUser className="text-3xl font-extralight" />
+            <div className="flex flex-row gap-2 pl-4 pr-2 items-center">
+              <FiUser className="   font-extralight" size={28}/>
           
             </div>
            
@@ -133,7 +134,7 @@ const Navbar: React.FC = () => {
                 0
               </span>
               <button className="flex flex-row gap-1 text-xl ">
-                <ShoppingBag className="text-3xl font-extralight" />
+                <ShoppingBag className="text-3xl font-extralight" size={28}/>
               
               </button>
             </div>

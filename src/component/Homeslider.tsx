@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 interface Slide {
   image: string;
@@ -65,15 +66,17 @@ const HomeSlider: React.FC = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 px-2 py-1 rounded-full text-white font-bold"
+        className="absolute left-4 font-bold text-4xl p-2 text-white bg-gray-800 bg-opacity-50 rounded-full"
       >
-        &lt;
+                <IoIosArrowBack />
+
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 px-2 py-1 rounded-full text-white font-bold"
+        className="absolute right-4 top-1/2 font-bold text-4xl p-2 text-white transform -translate-y-1/2 bg-gray-800 bg-opacity-50 rounded-full"
       >
-        &gt;
+        <IoIosArrowForward />
+
       </button>
     </div>
   );

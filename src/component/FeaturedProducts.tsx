@@ -13,12 +13,13 @@ interface Product {
 }
 
 const products: Product[] = [
-  
   {
     id: 5,
     name: "Vincent Chase Gold Yellow Full Rim Geometric",
-    imageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-3-600x543.jpg", // Replace with your main image URL
-    hoverImageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-5-600x543.jpg", // Replace with hover image URL
+    imageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-3-600x543.jpg", // Replace with your main image URL
+    hoverImageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-5-600x543.jpg", // Replace with hover image URL
     discount: 8,
     oldPrice: 13,
     newPrice: 12,
@@ -28,8 +29,10 @@ const products: Product[] = [
   {
     id: 6,
     name: "Black Blue Full Rim Round Vincent Chase",
-    imageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-5-600x543.jpg", // Replace with your main image URL
-    hoverImageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-3-600x543.jpg", // Replace with hover image URL
+    imageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-5-600x543.jpg", // Replace with your main image URL
+    hoverImageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-3-600x543.jpg", // Replace with hover image URL
     discount: 0,
     oldPrice: 15,
     newPrice: 15,
@@ -39,8 +42,10 @@ const products: Product[] = [
   {
     id: 7,
     name: "Vincent Chase Gold Yellow Full Rim Geometric",
-    imageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-7-600x543.jpg", // Replace with your main image URL
-    hoverImageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-10-600x543.jpg", // Replace with hover image URL
+    imageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-7-600x543.jpg", // Replace with your main image URL
+    hoverImageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-10-600x543.jpg", // Replace with hover image URL
     discount: 8,
     oldPrice: 13,
     newPrice: 12,
@@ -50,8 +55,10 @@ const products: Product[] = [
   {
     id: 8,
     name: "Black Blue Full Rim Round Vincent Chase",
-    imageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-10-600x543.jpg", // Replace with your main image URL
-    hoverImageUrl: "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-7-600x543.jpg", // Replace with hover image URL
+    imageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-10-600x543.jpg", // Replace with your main image URL
+    hoverImageUrl:
+      "https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2024/01/01-7-600x543.jpg", // Replace with hover image URL
     discount: 0,
     oldPrice: 15,
     newPrice: 15,
@@ -73,15 +80,16 @@ const FeaturedProducts: React.FC = () => {
 
   return (
     <div className="p-4 mb-[15vh] md:mx-[10vw]">
-        <div className="flex flex-col justify-center items-center w-full">
-            <h1 className="font-semibold text-gray-800 text-5xl mb-14">Featured Products</h1>
-           
-        </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="flex flex-col justify-center items-center w-full">
+        <h1 className="font-semibold text-gray-800 text-5xl mb-14">
+          Featured Products
+        </h1>
+      </div>
+      <div className="grid  grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6  overflow-hidden">
         {products.map((product) => (
           <div
             key={product.id}
-            className="relative group "
+            className="relative group h-[500px]"
             onMouseEnter={() => handleMouseEnter(product.id)}
             onMouseLeave={handleMouseLeave}
           >
@@ -97,10 +105,9 @@ const FeaturedProducts: React.FC = () => {
                   : product.imageUrl
               }
               alt={product.name}
-              className={`w-full h-auto object-cover rounded-md mb-4 transition-all duration-700 ease-in-out group-hover:h-60`}   
-               />
-
-
+              className={`w-full object-cover rounded-md mb-4 transition-all duration-700 ease-in-out h-80 group-hover:h-60`}
+              style={{ transitionProperty: "height" }}
+            />
 
             <div className="text-center px-5">
               <h3 className="text-xl text-gray-700">{product.name}</h3>
@@ -113,7 +120,7 @@ const FeaturedProducts: React.FC = () => {
                   )
                 )}
               </div>
-              <div className="flex justify-center items-center space-x-2">
+              <div className="flex flex-col justify-center items-center space-x-2">
                 {product.oldPrice !== product.newPrice && (
                   <span className="line-through text-gray-500 text-lg">
                     ${product.oldPrice}
@@ -122,14 +129,14 @@ const FeaturedProducts: React.FC = () => {
                 <span className="text-red-500 text-lg font-bold">
                   ${product.newPrice}
                 </span>
+
                 {hoveredProduct === product.id && (
-              <button className="absolute bottom-4 truncate bg-red-600 text-white uppercase text-xl px-6 py-3   ">
-                Select Option
-              </button>
-            )}
+                  <button className=" truncate bg-red-600 text-white uppercase text-xl px-6 py-3  transition-all duration-1000 ease-in-out ">
+                    Select Option
+                  </button>
+                )}
               </div>
             </div>
-           
           </div>
         ))}
       </div>

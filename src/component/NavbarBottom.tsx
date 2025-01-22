@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ChevronDown, Menu } from "lucide-react";
 import Products1 from "./Products";
 
-
 const NavigationMenu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -15,12 +14,8 @@ const NavigationMenu = () => {
     setActiveDropdown(null);
   };
 
-
-
-
   return (
     <nav className="bg-white w-[100vw] text-gray-900 relative hidden lg:flex">
-      
       <div className="mx-auto w-full px-4">
         <div className="flex items-center justify-center h-24">
           {/* Mobile menu button */}
@@ -36,11 +31,14 @@ const NavigationMenu = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center w-full justify-center space-x-4 text-lg ">
             {/* LOGO */}
-            <img className="h-12 w-auto pr-20" src="https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/plugins/templatemela-theme-glassey/layouts/default/img/logo.svg" />
+            <img
+              className="h-12 w-auto pr-20"
+              src="https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/plugins/templatemela-theme-glassey/layouts/default/img/logo.svg"
+            />
 
             <a
               href="#"
-              className="px-3 py-2 flex font-semibold items-center text-red-600 hover:text-gray-300"
+              className="px-3 py-2 flex font-semibold items-center text-red-600 text-xl hover:text-gray-300"
             >
               Home
             </a>
@@ -51,18 +49,17 @@ const NavigationMenu = () => {
             >
               <a
                 href="#"
-                className="px-3 py-2 flex items-center font-semibold hover:text-gray-300"
+                className="px-3 py-2 flex items-center font-semibold text-xl text-gray-800 hover:text-red-600"
               >
                 Shop
-                <ChevronDown size={16} className="ml-1" />
-
+                <ChevronDown size={18} className="ml-1" />
               </a>
               {activeDropdown === "Shop" && (
-                <div className="absolute -left-[43vw] mt-6 z-10 border-t-2 w-[95vw] px-[10vw] py-[3vw] bg-white shadow-xl grid grid-cols-4 gap-6 animate-fade-slide">
-                  {/* Categories Section */}
+                <div className="absolute -left-[40vw] mt-6 z-10 border-t-2 w-[95vw] px-[10vw] py-[3vw] bg-white shadow-xl grid grid-cols-4 gap-6 animate-fade-slide">
+                  {/* Product Types Section */}
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Appliances
+                      Product Types
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -70,7 +67,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Scan Printers
+                          Simple Products
                         </a>
                       </li>
                       <li>
@@ -78,7 +75,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Mini Cameras
+                          Grouped Products
                         </a>
                       </li>
                       <li>
@@ -86,7 +83,8 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Chargers
+                          Variable Product{" "}
+                          <span className="text-green-500">NEW</span>
                         </a>
                       </li>
                       <li>
@@ -94,7 +92,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Tablets
+                          External/Affiliate Product
                         </a>
                       </li>
                       <li>
@@ -102,14 +100,33 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Wireless Mouse
+                          Onsale Products{" "}
+                          <span className="text-red-500">SALE</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Upsell Products
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Cross-Sell Product
                         </a>
                       </li>
                     </ul>
                   </div>
+
+                  {/* WooCommerce Pages Section */}
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Phones
+                      WooCommerce Pages
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -117,7 +134,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Apple Phones
+                          Shop Page
                         </a>
                       </li>
                       <li>
@@ -125,7 +142,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Ear Buds
+                          Checkout Page
                         </a>
                       </li>
                       <li>
@@ -133,7 +150,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Android Phones
+                          Shopping Cart
                         </a>
                       </li>
                       <li>
@@ -141,7 +158,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Smart Phones
+                          My Account
                         </a>
                       </li>
                       <li>
@@ -149,27 +166,102 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Wired Earbuds
+                          Shop Ajax Filter{" "}
+                          <span className="text-pink-500">HOT</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Product Category
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Privacy Policy
                         </a>
                       </li>
                     </ul>
                   </div>
 
-                  
+                  {/* Product Features Section */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Product Features
+                    </h3>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Stock Progress Bar
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Color/Image Swatches
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Size Guide Table
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Custom Tab
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Countdown Timer
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Product Video{" "}
+                          <span className="text-pink-500">FEATURED</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Product Brand
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
 
-                  {/* Promotional Cards */}
-                  <div className="col-span-2 flex flex-row gap-10 space-y-4">
-                    {/* First Offer Card */}
-                    <div className="bg-gray-100 rounded-lg p-4 flex items-center">
-                        <img
-                          src="https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2023/10/shop-banner.jpg"
-                          alt="Offer Image 1"
-                          className=" object-contain"
-                        />
-                     
-                    </div>
-
-                 
+                  {/* Promotional Card Section */}
+                  <div className=" flex items-center">
+                    <img
+                      src="https://demos.codezeel.com/wordpress/WCM06/WCM060147/wp-content/uploads/2023/10/shop-banner.jpg"
+                      alt="Offer Image 1"
+                      className=" object-contain"
+                    />
                   </div>
                 </div>
               )}
@@ -182,18 +274,17 @@ const NavigationMenu = () => {
             >
               <a
                 href="#"
-                className="px-3 py-2 flex items-center font-semibold hover:text-gray-300"
+                className="px-3 py-2 flex items-center font-semibold text-xl text-gray-800 hover:text-red-600"
               >
                 Categories
-             
-                <ChevronDown size={16} className="ml-1" />
+                <ChevronDown size={18} className="ml-1" />
               </a>
               {activeDropdown === "Categories" && (
                 <div className="absolute -left-[50vw] mt-6 z-10 border-t-2 w-[110vw] px-[10vw] py-[3vw] bg-white shadow-xl flex flex-row justify-between gap-10 animate-fade-slide">
-                  {/* Watches Section */}
+                  {/* Glasses Categories */}
                   <div className="space-y-4 flex flex-1 flex-col w-[20vw]">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Watches
+                      Browline Glasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -201,7 +292,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Smart Watches
+                          Rectangle Glasses
                         </a>
                       </li>
                       <li>
@@ -209,7 +300,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Rolex Watches
+                          Retro Sunglasses
                         </a>
                       </li>
                       <li>
@@ -217,7 +308,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Omega Watches
+                          Riding Glasses
                         </a>
                       </li>
                       <li>
@@ -225,13 +316,13 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Cartier Watches
+                          Rimless Glasses
                         </a>
                       </li>
                     </ul>
 
                     <h3 className="text-lg font-semibold text-gray-900 mt-8">
-                      Television
+                      Geometric Glasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -239,7 +330,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Panasonic TV
+                          Heart Sunglasses
                         </a>
                       </li>
                       <li>
@@ -247,7 +338,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Samsung TV
+                          Rectangle Sunglasses
                         </a>
                       </li>
                       <li>
@@ -255,7 +346,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Sony TV
+                          Semi-rimless Glasses
                         </a>
                       </li>
                       <li>
@@ -263,16 +354,16 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Hisense TV
+                          Wrap Sunglasses
                         </a>
                       </li>
                     </ul>
                   </div>
 
-                  {/* Speakers & Electronics Section */}
+                  {/* Additional Categories */}
                   <div className="space-y-4 flex flex-1 flex-col w-[20vw]">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Speakers
+                      Cat Eye Glasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -280,7 +371,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Yamaha Speakers
+                          Round Glass
                         </a>
                       </li>
                       <li>
@@ -288,7 +379,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Sonos Speakers
+                          Square Sunglasses
                         </a>
                       </li>
                       <li>
@@ -296,7 +387,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          RCF Speakers
+                          Transparent Glasses
                         </a>
                       </li>
                       <li>
@@ -304,13 +395,13 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Party Speakers
+                          Vintage Goggles
                         </a>
                       </li>
                     </ul>
 
                     <h3 className="text-lg font-semibold text-gray-900 mt-8">
-                      Electronics
+                      Oval Glasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -318,7 +409,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Appliances
+                          Butterfly Sunglasses
                         </a>
                       </li>
                       <li>
@@ -326,7 +417,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Watches
+                          Clubmaster Glass
                         </a>
                       </li>
                       <li>
@@ -334,16 +425,24 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Laptops
+                          Hexagonal Sunglasses
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Octagonal Sunglasses
                         </a>
                       </li>
                     </ul>
                   </div>
 
-                  {/* Laptops & Gaming Section */}
+                  {/* Eyeglasses Section */}
                   <div className="space-y-4 flex flex-1 flex-col w-[20vw]">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Laptops
+                      Eyeglasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -351,7 +450,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Apple Laptops
+                          Aviator Sunglasses
                         </a>
                       </li>
                       <li>
@@ -359,7 +458,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Dell Laptops
+                          Clubmaster Sunglasses
                         </a>
                       </li>
                       <li>
@@ -367,7 +466,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          HP Laptops
+                          Round Sunglasses
                         </a>
                       </li>
                       <li>
@@ -375,13 +474,13 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Lenovo Laptops
+                          Wayfarer Sunglasses
                         </a>
                       </li>
                     </ul>
 
                     <h3 className="text-lg font-semibold text-gray-900 mt-8">
-                      Gaming
+                      Oversized Glasses
                     </h3>
                     <ul className="space-y-2">
                       <li>
@@ -389,7 +488,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Headphones
+                          Clip-On Glasses
                         </a>
                       </li>
                       <li>
@@ -397,7 +496,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Gaming Boards
+                          Navigator Glasses
                         </a>
                       </li>
                       <li>
@@ -405,7 +504,7 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Gaming Mice
+                          Tortoise Glasses
                         </a>
                       </li>
                       <li>
@@ -413,82 +512,76 @@ const NavigationMenu = () => {
                           href="#"
                           className="text-gray-600 hover:text-gray-900"
                         >
-                          Video Games
+                          Wayfarer Glasses
                         </a>
                       </li>
                     </ul>
                   </div>
 
-                  {/* Featured Products Section */}
-                  <div className="col-span-1  w-[50vw] grid grid-cols-2 space-y-4 gap-4">
+                  {/* Best Selling Products */}
+                  <div className="col-span-1 w-[50vw] grid grid-cols-2 space-y-4 gap-4">
                     <div className="bg-gray-100 rounded-lg p-4">
                       <img
                         src="/api/placeholder/80/80"
-                        alt="Vybrix Power Bank"
+                        alt="Black Brown Sunglasses"
                         className="w-20 h-20 object-contain mb-4"
                       />
                       <h4 className="font-semibold text-gray-900">
-                        Vybrix Magnetic Power Bank Wireless Charging
-                      </h4>
-                      <p className="text-lg font-bold text-gray-900 mt-2">
-                        $32.00
-                      </p>
-                    </div>
-
-                    <div className="bg-gray-100 rounded-lg p-4">
-                      <img
-                        src="/api/placeholder/80/80"
-                        alt="LG Refrigerator"
-                        className="w-20 h-20 object-contain mb-4"
-                      />
-                      <h4 className="font-semibold text-gray-900">
-                        LG 674 litres Side by Side Refrigerator
+                        Black Brown Solid Full Rim Wayfarer Sunglass
                       </h4>
                       <div className="flex items-center mt-2">
-                        <p className="text-lg font-bold text-gray-900">
-                          $60.00
-                        </p>
+                        <p className="text-lg font-bold text-red-600">$21</p>
                         <p className="text-sm text-gray-500 line-through ml-2">
-                          $68.00
+                          $22
                         </p>
                       </div>
                     </div>
+
                     <div className="bg-gray-100 rounded-lg p-4">
                       <img
                         src="/api/placeholder/80/80"
-                        alt="Vybrix Power Bank"
+                        alt="Yellow Black Sunglasses"
                         className="w-20 h-20 object-contain mb-4"
                       />
                       <h4 className="font-semibold text-gray-900">
-                        Vybrix Magnetic Power Bank Wireless Charging
+                        Yellow Black Full Rim Cat Eye Vincent Chase Polarized
                       </h4>
-                      <p className="text-lg font-bold text-gray-900 mt-2">
-                        $32.00
-                      </p>
+                      <div className="flex items-center mt-2">
+                        <p className="text-lg font-bold text-red-600">$16</p>
+                        <p className="text-sm text-gray-500 line-through ml-2">
+                          $17
+                        </p>
+                      </div>
                     </div>
 
                     <div className="bg-gray-100 rounded-lg p-4">
                       <img
                         src="/api/placeholder/80/80"
-                        alt="LG Refrigerator"
+                        alt="Blue Rim Sunglasses"
                         className="w-20 h-20 object-contain mb-4"
                       />
                       <h4 className="font-semibold text-gray-900">
-                        LG 674 litres Side by Side Refrigerator
+                        Full Rim Square Branded Latest and Stylish Sunglasses
                       </h4>
-                      <div className="flex items-center mt-2">
-                        <p className="text-lg font-bold text-gray-900">
-                          $60.00
-                        </p>
-                        <p className="text-sm text-gray-500 line-through ml-2">
-                          $68.00
-                        </p>
-                      </div>
+                      <p className="text-lg font-bold text-red-600 mt-2">$18</p>
+                    </div>
+
+                    <div className="bg-gray-100 rounded-lg p-4">
+                      <img
+                        src="/api/placeholder/80/80"
+                        alt="Pink Rim Sunglasses"
+                        className="w-20 h-20 object-contain mb-4"
+                      />
+                      <h4 className="font-semibold text-gray-900">
+                        Pink Full Rim Cat Eye Vincent Chase Polarized
+                      </h4>
+                      <p className="text-lg font-bold text-red-600 mt-2">$14</p>
                     </div>
                   </div>
                 </div>
               )}
             </div>
+
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter("Products")}
@@ -496,17 +589,16 @@ const NavigationMenu = () => {
             >
               <a
                 href="#"
-                className="px-3 py-2 flex items-center font-semibold hover:text-gray-300"
+                className="px-3 py-2 flex items-center font-semibold text-xl text-gray-800 hover:text-red-600"
               >
                 Products
-                <ChevronDown size={16} className="ml-1" />
-
+                <ChevronDown size={18} className="ml-1" />
               </a>
 
               {activeDropdown === "Products" && (
-                <div className="absolute -left-[60vw] mt-6 z-10 border-t-2 w-[110vw] px-[10vw] py-[3vw] bg-white shadow-xl animate-fade-slide">
+                <div className="absolute -left-[60vw] mt-6 z-10 border-t-2 w-[110vw] px-[10vw]  bg-white shadow-xl animate-fade-slide">
                   <div className="  ">
-                   <Products1/>
+                    <Products1 />
                   </div>
                 </div>
               )}
@@ -519,11 +611,10 @@ const NavigationMenu = () => {
             >
               <a
                 href="#"
-                className="px-3 py-2 flex items-center font-semibold hover:text-gray-300"
+                className="px-3 py-2 flex items-center font-semibold text-xl text-gray-800 hover:text-red-600"
               >
                 Top Deals
-             
-                <ChevronDown size={16} className="ml-1" />
+                <ChevronDown size={18} className="ml-1" />
               </a>
               {activeDropdown === "Deals" && (
                 <div className="absolute -left-[70vw] mt-6 z-10 border-t-2 w-[110vw] px-[10vw] py-[3vw] bg-white shadow-xl flex flex-row justify-between gap-10 animate-fade-slide">
@@ -834,27 +925,91 @@ const NavigationMenu = () => {
             >
               <a
                 href="#"
-                className="px-3 py-2 flex items-center font-semibold hover:text-gray-300"
+                className="px-3 py-2 flex items-center font-semibold text-xl text-gray-800 hover:text-red-600"
               >
-                Elements <ChevronDown size={16} className="ml-1" />
+                Elements <ChevronDown size={18} className="ml-1" />
               </a>
               {activeDropdown === "Elements" && (
-                <div className="absolute left-0 z-10 border-t-2 w-[10vw] p-[1vw] mt-2 rounded-sm bg-white shadow-xl flex animate-fade-slide">
+                <div className="absolute left-0 z-10 border-t-2 w-[15vw] p-[2vw] mt-2 rounded-sm bg-white shadow-xl flex animate-fade-slide">
                   <div>
                     <ul className="space-y-3 text-gray-800 text-lg">
-                      <li>About</li>
-                      <li>Services</li>
-                      <li>Team</li>
-                      <li>Contact</li>
-                      <li>Compare</li>
-                      <li>Services</li>
-                      <li>Team</li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Accordion
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Icon Box
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Portfolio
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          FAQs <span className="text-pink-500">ASK</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Gallery
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Tabs <span className="text-green-500">NEW</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Blog
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          About Us
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-gray-900"
+                        >
+                          Contact Us
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
               )}
             </div>
-           
           </div>
         </div>
       </div>

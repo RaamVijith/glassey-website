@@ -1,5 +1,9 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { SiPiapro } from 'react-icons/si';
+import { PiGoogleLogoBold } from 'react-icons/pi';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
   return (
@@ -22,12 +26,12 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <p>demo@example.com</p>
               </div>
-              <div className='flex flex-row items-center gap-2'>
-                <Facebook className='bg-white hover:bg-red-500 rounded-full p-7 text-xl text-gray-700' color='#223340' size={24}/>
-                <Facebook className='bg-white hover:bg-red-500 rounded-full p-7 text-xl text-gray-700' color='#223340' size={24}/>
-                <Facebook className='bg-white hover:bg-red-500 rounded-full p-7 text-xl text-gray-700' color='#223340' size={24}/>
-                <Facebook className='bg-white hover:bg-red-500 rounded-full p-7 text-xl text-gray-700' color='#223340' size={24}/>
-                <Facebook className='bg-white hover:bg-red-500 rounded-full p-7 text-xl text-gray-700' color='#223340' size={24}/>
+              <div className='flex flex-row items-center gap-2 mt-2'>
+                <FaFacebookF className="text-[#223340] bg-white hover:bg-red-600 hover:text-white rounded-full p-3 h-12 w-12" />
+                <FaXTwitter className="text-[#223340] bg-white hover:bg-red-600 hover:text-white rounded-full p-3 h-12 w-12" />
+                <FaInstagram className="text-[#223340] bg-white hover:bg-red-600 hover:text-white rounded-full p-3 h-12 w-12" />
+                <SiPiapro className="text-[#223340] bg-white hover:bg-red-600 hover:text-white rounded-full p-3 h-12 w-12" />
+                <PiGoogleLogoBold className="text-[#223340] bg-white hover:bg-red-600 hover:text-white rounded-full p-3 h-12 w-12" />
 
               </div>
             </div>
